@@ -1,0 +1,122 @@
+* {
+    overflow: hidden;
+    /* cursor: grab; */
+    margin: 0;
+    padding: 0;
+    letter-spacing: -3px;
+    word-break: keep-all;
+    /* transition: all 0.3s ease-in-out; */
+}
+::selection {
+  color: rgb(0, 0, 0);
+}
+html, body { margin: 0; background-color: rgb(0, 0, 0); }
+canvas { display: block; width: 100vw; height: 100vh; }
+#info {
+  position: absolute;
+  left: 10px;
+  z-index: 1000;
+  color: white;
+  bottom: 10px;
+  font-size: 5px;
+  line-height: 2;
+  width: 100vw;
+  font-family: serif;
+  text-align: center;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: keep-all;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#info div {
+  font-size: 20px;
+  line-height: 2;
+ width: 20%;
+}
+#info .text {
+  width: 80%; 
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.logo {
+  width: 300px; 
+  position: absolute; 
+  top: 20px; 
+  left: 20px; 
+  z-index: 3000;
+}
+.sphereMent:hover {
+  cursor: pointer;
+}
+.sphereMent p:hover {
+  z-index: 3000;
+  /* background-color: aliceblue; */
+}
+
+.firstP {
+  position: absolute;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* z-index: 3000; */
+  /* width: 100vw;
+  height: 100vh; */
+  /* display: flex;
+  align-items: center; */
+  /* color: white; */
+  transition: all 0s;
+}
+.innerText {
+  background-color: rgba(255, 255, 255, 1);
+  display: inline;
+  font-size: 20px;
+  line-height: 0px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* filter: blur(2px); */
+}
+.innerText:hover {
+  /* filter: blur(0.5px); */
+}
+.innerText::selection {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  line-height: 0px;
+  padding: 0;
+  margin: 0;
+  /* transition: all 3s;  */
+  /* filter: blur(0px); */
+
+}
+b{
+  color: rgb(0, 0, 0);
+  filter: blur(0px);
+}
+
+.firstP p {
+  font-family: serif;
+  font-size: 3px;
+  letter-spacing: 0.05px;
+  line-height: 0;
+  color: white;
+  z-index: 3000;
+  /* background-color: white; */
+  display: inline;
+  vertical-align: middle; /* 추가된 부분 */
+  transition: all 0s;
+}
+.firstP p::selection{
+  background-color: black;
+  color: white;
+  transition: all 0s;
+}
+
+@media (max-width: 768px) {
+  /* 모바일 화면에서 폰트 크기 조정 */
+
+}

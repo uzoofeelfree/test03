@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>little sisters language creation club</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    body {
+        cursor: none; /* 기본 커서 숨기기 */
+    }
+    body{
+ -ms-overflow-style: none;
+ }
+::-webkit-scrollbar {
+  display: none;
+}
+*{
+   -ms-overflow-style: none;
+}
+*::-webkit-scrollbar{
+  display:none;
+}
+
+    .custom-cursor {
+        position: absolute;
+        width: 30px; /* 동그라미 크기 */
+        height: 30px; /* 동그라미 크기 */
+        background-color: rgba(255, 255, 255, 0); /* 동그라미 색상 */
+        outline: 2px solid white;
+        border-radius: 50%; /* 동그라미 모양 */
+        pointer-events: none; /* 커서가 다른 요소와 상호작용하지 않도록 설정 */
+        z-index: 10000; /* 다른 요소 위에 표시 */
+        /* display: none; */
+    }
+    @media (max-width: 768px) {
+      .custom-cursor {
+        display: none;
+        background-color: transparent;
+      }
+    }
+    .overHtml{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 10000;
+        background-color: rgba(0, 0, 0, 0.05);
+        overflow-x: scroll;
+        /* display: none; */
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+        /* display: none; */
+    }
+    .overHtml-inner{
+        height: 100vh;
+        width: 15000px;
+        position: relative;
+        /* transform: translate(-50%, -50%); */
+    }
+    .overHtml-inner .overTextBox{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        color: white;
+        /* font-size: clamp(1px, 1.5vw, 20px); */
+         /* 최소 16px, 최대 24px로 설정 */
+        font-size: 18px;
+        font-family: serif;
+        /* background-color: rebeccapurple; */
+    }
+    span{
+        color: white;
+        /* background-color: white; */
+        display: inline;
+        font-family: sans-serif;
+        font-family:serif;
+
+        letter-spacing: 1px;
+        font-weight: normal;
+    }
+    *{
+        letter-spacing: 0.03px;
+    }
+    .it::selection{
+        background-color: black;
+        color: white;
+    }
+    b::selection{
+        background-color: black;
+        color: white;
+    }
+    .indented-text_n{
+        margin-left: 0em;
+        background-color: rgba(255, 255, 255, 0);
+        display: inline;
+        color: white;
+    }
+    .indented-text_0{
+        margin-left: 0em;
+        background-color: rgb(255, 255, 255);
+        display: inline;
+    }
+    .indented-text_1 {
+        margin-left: 5em;
+        background-color: rgb(255, 255, 255);
+        display: inline;
+    }
+    .indented-text_2 {
+        margin-left: 6em;
+        background-color: rgb(255, 255, 255);
+        display: inline;
+    }
+    .indented-text_3 {
+        margin-left: 7em;
+        background-color: rgb(255, 255, 255);
+        display: inline;
+    }
+    .indented-text_4 {
+        margin-left: 8em;
+        background-color: rgb(255, 255, 255);
+        display: inline;
+    }
+
+    .indented-text_5 {
+        margin-left: 10em;
+        background-color: rgb(255, 255, 255);
+        display: inline;
+    }
+
+    .overTextBox{
+        filter: blur(1px);
+        transition: filter 1s ease-in-out;
+     
+    }
+    .overTextBox:hover{
+        filter: blur(0px);
+    }
+    #overTextBox-1{
+        top: 30vh;
+        /* left: 1000px; */
+        /* left: 1100px; */
+        /* left: 130px; */
+       /* left: 100vw; */
+       /* left: 1500px; */
+       margin-left: 1400px;
+    }
+
+    #overTextBox-2{
+        top: 30vh;
+        /* left: 1000px; */
+        /* left: 1100px; */
+        left: 4200px;
+        font-family: serif;
+       /* left: 100vw; */
+    }
+
+
+    #overTextBox-3{
+        top: 20vh;
+        /* left: 1000px; */
+        /* left: 1100px; */
+        left: 4900px;
+        font-family: serif;
+       /* left: 100vw; */
+    }
+
+    #overTextBox-4{
+        top: 20vh;
+        /* left: 1000px; */
+        /* left: 1100px; */
+        left: 5500px;
+        font-family: serif;
+       /* left: 100vw; */
+    }
+
+    #overTextBox-5{
+        top: 20vh;
+        /* left: 1000px; */
+        /* left: 1100px; */
+        left: 6600px;
+        font-family: serif;
+       /* left: 100vw; */
+    }
+
+    #overTextBox-6{
+        top: 20vh;
+        /* left: 1000px; */
+        /* left: 1100px; */
+        left: 12000px;
+        font-family: serif;
+       /* left: 100vw; */
+    }
+
+    #overTextBox-7{
+        top: 20vh;
+        /* left: 1000px; */
+        /* left: 1100px; */
+        left: 10000px;
+        font-family: serif;
+       /* left: 100vw; */
+    }
+
+    #overTextBox-8{
+        top: 70vh;
+        left: 3200px;
+        font-family: sans-serif;
+        color: rgb(255, 255, 255);
+       /* left: 100vw; */
+       /* background-color: aliceblue; */
+       filter: blur(3px);
+       /* outline: 1px solid white; */
+    }
+    #overTextBox-8:hover{
+        filter: blur(0px);
+    }
+    #overTextBox-8 div{
+
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        font-family: serif;
+    }
+
+    #overTextBox-8-show{
+        transition: opacity 1s ease-in-out;
+        top: 20vh;
+        left: 2900px;
+        font-family: serif;
+        color: rgb(255, 255, 255);
+       /* left: 100vw; */
+       /* background-color: aliceblue; */
+       filter: blur(3px);
+       opacity: 0;
+    }
+    #overTextBox-8-show div{
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        font-family: serif;
+        z-index: 11000;
+        font-family: sans-serif !important;
+    }
+
+
+    #overTextBox-9{
+        top: 70vh;
+        left: 6000px;
+        font-family: sans-serif;
+        color: rgb(255, 255, 255);
+       /* left: 100vw; */
+       /* background-color: aliceblue; */
+       filter: blur(3px);
+       /* outline: 1px solid white; */
+    }
+    #overTextBox-9:hover{
+        filter: blur(0px);
+    }
+    #overTextBox-9 div{
+
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        font-family: serif;
+    }
+
+    #overTextBox-9-show{
+        transition: opacity 1s ease-in-out;
+        top: 10vh;
+        left: 6000px;
+        font-family: serif;
+        color: rgb(255, 255, 255);
+       /* left: 100vw; */
+       /* background-color: aliceblue; */
+       filter: blur(3px);
+       opacity: 0;
+    }
+    #overTextBox-9-show div{
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        font-family: serif;
+        z-index: 11000;
+        font-family: sans-serif !important;
+    }
+
+    /* // 10 */
+
+    #overTextBox-10{
+        top: 10vh;
+        left: 10500px;
+        font-family: sans-serif;
+        color: rgb(255, 255, 255);
+       /* left: 100vw; */
+       /* background-color: aliceblue; */
+       filter: blur(3px);
+       /* outline: 1px solid white; */
+    }
+    #overTextBox-10:hover{
+        filter: blur(0px);
+    }
+    #overTextBox-10 div{
+
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        font-family: serif;
+    }
+
+    #overTextBox-10-show{
+        transition: opacity 1s ease-in-out;
+        top: 50vh;
+        left: 10700px;
+        font-family: serif;
+        color: rgb(255, 255, 255);
+       /* left: 100vw; */
+       /* background-color: aliceblue; */
+       filter: blur(3px);
+       opacity: 0;
+    }
+    #overTextBox-10-show div{
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        font-family: serif;
+        z-index: 11000;
+        font-family: sans-serif !important;
+    }
+
+       /* // 11 */
+
+       #overTextBox-11{
+        top: 30vh;
+        left: 12500px;
+        font-family: sans-serif;
+        color: rgb(255, 255, 255);
+       /* left: 100vw; */
+       /* background-color: aliceblue; */
+       filter: blur(3px);
+       /* outline: 1px solid white; */
+    }
+    #overTextBox-11:hover{
+        filter: blur(0px);
+    }
+    #overTextBox-11 div{
+
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        font-family: serif;
+    }
+
+    #overTextBox-11-show{
+        transition: opacity 1s ease-in-out;
+        top: 60vh;
+        left: 12000px;
+        font-family: serif;
+        color: rgb(255, 255, 255);
+       /* left: 100vw; */
+       /* background-color: aliceblue; */
+       filter: blur(3px);
+       opacity: 0;
+    }
+    #overTextBox-11-show div{
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        font-family: serif;
+        z-index: 11000;
+        font-family: sans-serif !important;
+       
+    }
+
+       /* // 12 */
+
+       #overTextBox-12{
+        top: 70vh;
+        left: 13000px;
+        font-family: sans-serif;
+        color: rgb(255, 255, 255);
+       /* left: 100vw; */
+       /* background-color: aliceblue; */
+       filter: blur(3px);
+       /* outline: 1px solid white; */
+    }
+    #overTextBox-12:hover{
+        filter: blur(0px);
+    }
+    #overTextBox-12 div{
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        font-family: serif;
+    }
+
+     #overTextBox-12-show{
+        transition: opacity 1s ease-in-out;
+        top: 10vh;
+        left: 13000px;
+        font-family: serif;
+        color: rgb(255, 255, 255);
+       /* left: 100vw; */
+       /* background-color: aliceblue; */
+       filter: blur(3px);
+       opacity: 0;  
+    }
+    #overTextBox-12-show div{
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        font-family: serif;
+        z-index: 11000;
+        font-family: sans-serif !important;
+    }
+
+    
+
+
+
+    b{
+        font-weight: normal;
+        color: black;
+    }
+  </style>
+</head>
+<body>
+    <div class="overHtml">
+        <div class="overHtml-inner">
+            <div class="overTextBox" id="overTextBox-1">
+               <span>
+<div class="indented-text_1 it">언어에 대한 조종과 통제에 의해</div><br>
+<div class="indented-text_2 it">우리의 <b>생각과</b> 행동은 움직여집니다.</div><br>
+<div class="indented-text_0 it">이것을 우리는 언어의 정치성</div><br>
+<div class="indented-text_2 it">이라고 부릅니다.</div><br>
+<div class="indented-text_1 it">리틀 시스터즈의 방법론은</div><br>
+<div class="indented-text_1 it">권력자들이 사용하는 <b>언어적 규칙들을</b></div><br>
+<div class="indented-text_0 it">정치적이고 창의적으로 <b>유희하고,</b></div><br><br>
+<div class="indented-text_0 it">대안의 언어를 창조합니다.</div><br>
+               </span>
+            </div>
+
+
+            <div class="overTextBox" id="overTextBox-2">
+                <span>
+                    <div class="indented-text_0 it"> 리틀 시스터즈 언어창조회는 조지 오웰</div><br>
+                    <div class="indented-text_1 it"> (George Orwell)의 소설 『1984』(<b>1949</b>)에</div><br>
+                    <div class="indented-text_0 it">등장하는 전체주의 권력집단 빅 브라더와 대조되는 이름입니다.</div><br>
+                    <div class="indented-text_2 it">소설 속 빅브라더</div><br>
+                    <div class="indented-text_1 it">가 만들어내는 신</div><br>
+                    <div class="indented-text_1 it">어(新語,</div><br>
+                    <div class="indented-text_1 it"> <b>Newspeak</b>)가 권력을 통해 <b>유희하고,</b></div><br><br>
+                    <div class="indented-text_3 it">억압을 강화한다면,</div><br><br>
+
+                    <div class="indented-text_4 it">리틀 시스터즈의 언어는 </div><br>
+                    <div class="indented-text_3 it">언어의 권력 불평등을 해소함으로써</div><br>
+                    <div class="indented-text_4 it">기존 권력에</div><br>
+                    <div class="indented-text_2 it">저항하는 것을 목표로 합니다.</div><br><br>
+
+                    <div class="indented-text_2 it">빅 브라더의 언어는 <b>관료적</b>이고 하향식이며</div><br>
+                    <div class="indented-text_2 it">권위적이지만,</div><br>
+                    <div class="indented-text_1 it">리틀 시스터즈의 언어는 창조적이고</div><br>
+                    <div class="indented-text_2 it">상향식이며 저항적입니다.</div><br>
+                </span>
+             </div>
+
+             <div class="overTextBox" id="overTextBox-3">
+                <span>
+                    <div class="indented-text_1 it">신어는 사고의 영역을 넓히기 <b>위해서가</b></div><br>
+                    <div class="indented-text_2 it">아니라 '줄이기' 위해서</div><br>
+                    <div class="indented-text_1 it">만들어진 만큼,</div><br>
+                    <div class="indented-text_0 it"><b>어휘 선택</b>을 최소한도로 줄이는 것도 신어의</div><br>
+                    <div class="indented-text_1 it">고안 목적<b>을 달성하는 데</b> 간접적으로나마</div><br>
+                    <div class="indented-text_3 it">도움이 되었다. <b>p420</b></div><br>
+                    <br><br><br><br>
+                    <div class="indented-text_n it">조지 오웰, 『1984』, 정희성 옮김, 민음사 (2003)</div><br>
+                    <br><br>
+                    <div class="indented-text_1 it">신어의 고안 목적은 영사의</div><br>
+                    <div class="indented-text_2 it">신봉자들에게 걸맞은 세계관과 정신</div><br>
+                    <div class="indented-text_1 it">습관에 대한 표현 수단을 제공함과 동시에 영사</div><br>
+                    <div class="indented-text_0 it">이외의 다른 사상을 갖지</div><br>
+                    <div class="indented-text_1 it">못하도록 하는 데 있다.</div><br>
+                    <div class="indented-text_3 it">적어도 <b> 사상이 언어에 </b>의존하는 한,</div><br>
+                    <div class="indented-text_3 it">신어가 일단 전면적으로 채택되고 구어가</div><br>
+                    <div class="indented-text_3 it">잊히게 되면 이단적 사상, 즉</div><br>
+                    <div class="indented-text_3 it">영사의 원칙에 위배되는 사상은</div><br>
+                    <div class="indented-text_3 it"> <b>그야말로 설</b></div><br>
+                    <div class="indented-text_3 it">자리가 없게 된다. p.419</div><br>
+
+
+
+                </span>
+             </div>
+
+             <div class="overTextBox" id="overTextBox-4">
+                <span>
+                    <div class="indented-text_2 it">이는 부분적으로</div><br>
+                    <div class="indented-text_4 it">새로운 어휘를</div><br>
+                    <div class="indented-text_1 it">창조한 탓도 있지만, 무엇보다 바람직하지</div><br>
+                    <div class="indented-text_0 it">못하거나 비정통적인 의미를 지닌</div><br>
+                    <div class="indented-text_2 it">낱말을 삭제하고 한 어휘의 <b>2차적 의미를</b></div><br>
+                    <div class="indented-text_5 it">제거함으로</div><br>
+                    <div class="indented-text_1 it">가능했다. 한 가지 예를 들어보자.</div><br>
+                    <div class="indented-text_3 it">신어에는 아직도 ‘free(자유로운)'라는</div><br>
+                    <div class="indented-text_5 it">낱말이 남아 있다. 하지만 이 말은</div><br>
+                    <div class="indented-text_1 it"> 'This dog is free from lice. (이 개에는 이가</div><br>
+                    <div class="indented-text_0 it">없다.)’라든지</div><br>
+                    <div class="indented-text_0 it"> 'This field is free from weeds.</div><br>
+                    <div class="indented-text_3 it"> (이 밭에는 잡초가 없다.)'라는 식의</div><br>
+                    <div class="indented-text_0 it">문장에만 사용될 수 있을 뿐,</div><br>
+                    <div class="indented-text_1 it">'pollitically free(정치적으로</div><br>
+                    <div class="indented-text_4 it">자유로운)'라든지 'intellectually</div><br>
+                    <div class="indented-text_2 it">free(지적으로 자유로운)'라는 옛날식</div><br>
+                    <div class="indented-text_4 it">표현으로는 사용될 수 없다.</div><br>
+                    <div class="indented-text_3 it">왜냐하면 정치적·지적 자유란 이제</div><br>
+                    <div class="indented-text_4 it">더 이상 그 개념조차</div><br>
+                    <div class="indented-text_5 it">존재하지 않기 <b>때문이다.</b></div><br>
+                    <div class="indented-text_2 it">개념이 없으면 낱말도</div><br>
+                    <div class="indented-text_4 it">존재할 필요가</div><br>
+                    <div class="indented-text_5 it">없는 것이다.</div><br>
+                </span>
+             </div>
+
+             <div class="overTextBox" id="overTextBox-5">
+                <span>
+                    <div class="indented-text_0 it">LSLCC는</div><br>
+                    <div class="indented-text_2 it">타인에 대한 <b>착취를</b></div><br>
+                    <div class="indented-text_0 it">정당화하는 가부장적 이념에 따라</div><br>
+                    <div class="indented-text_2 it">자행되는 모든 차별과</div><br><br>
+                    <div class="indented-text_2 it">계층 간의 착취와</div><br>
+                    <div class="indented-text_1 it">종말을 <b>향해가는 환경 파괴는</b></div><br>
+                    <div class="indented-text_0 it">유토피아적 창조의 원리를 배반합니다.</div><br>
+                </span>
+             </div>
+
+             <div class="overTextBox" id="overTextBox-6">
+                <span>
+                    <div class="indented-text_1 it">새로운 언어는</div><br>
+                    <div class="indented-text_4 it">풍부한 상상력으로 행간을 읽어가며,</div><br>
+                    <div class="indented-text_2 it">다정한 말과 모욕하는 말을</div><br>
+                    <div class="indented-text_3 it">구별할 줄 알며,</div><br>
+                    <div class="indented-text_3 it">때에 따라 친근하고 <b>이해</b></div><br>
+                    <div class="indented-text_1 it">하기 쉬운 언어로 번역합니다.</div><br>
+                </span>
+             </div>
+
+             <div class="overTextBox" id="overTextBox-7">
+                <span>
+                    <div class="indented-text_0 it">누군가가 무언가에</div><br>
+                    <div class="indented-text_3 it">붙인 이름은</div><br>
+                    <div class="indented-text_0 it">세상에 대한 그의 인식을</div><br>
+                    <div class="indented-text_3 it">반영합니다.</div><br>
+                    <div class="indented-text_3 it">리틀 시스터즈는</div><br>
+                    <div class="indented-text_4 it">새로운 언어로</div><br>
+                    <div class="indented-text_3 it">스스로를 <b>호명</b>하며</div><br>
+                    <div class="indented-text_3 it">명명되는</div><br>
+                    <div class="indented-text_2 it">객체에서</div><br>
+                    <div class="indented-text_2 it">명명하는</div><br>
+                    <div class="indented-text_4 it">주체가 됩니다.</div><br>
+                </span>
+             </div>
+
+
+
+
+             <div class="overTextBox clickTextBox" id="overTextBox-8">
+                <span>
+                    <div class="indented-text_0 it">처음에</div><br>
+                    <div class="indented-text_3 it">세상에는 언어가 하나뿐이어서,</div><br>
+                    <div class="indented-text_0 it">모두가 같은 말을 썼다.</div><br><br>
+                    <div class="indented-text_3 it">근원의 세계에는</div><br>
+                    <div class="indented-text_3 it">말이 세상을 창조하고</div><br>
+                    <div class="indented-text_4 it">작명은 존재를 책임졌다.</div><br>
+                </span>
+             </div>
+
+             <div class="overTextBox clickTextBox shower" id="overTextBox-8-show">
+                    <div class="indented-text_0 it">세상은 신성한 존재의 말을 통해 창조되었다.</div><br>
+                    <div class="indented-text_3 it">말은 신의 존재이자 힘이고 행동방식이었다.</div><br>
+                    <div class="indented-text_0 it">신성한 존재는 자신을 닮은 인간을 창조하여</div><br><br>
+                    <div class="indented-text_3 it">말과 언어를 물려주었다.</div><br>
+                    <div class="indented-text_3 it">인간은 언어를 사용하여</div><br>
+                    <div class="indented-text_4 it">신이 만든 다른 피조물들을 이해하여 이들의 이름을 부여하는</div><br>
+                    <div class="indented-text_3 it">창조자이자 번역자로서 이들을 다스려야 하는 책임을 맡았다.</div><br>   
+                    <div class="indented-text_3 it">다른 존재를 정의내리는 인간은</div><br>   
+                    <div class="indented-text_3 it">신이 흡족히 여긴 상태를 유지하기 위해</div><br>   
+                    <div class="indented-text_3 it">다른 피조물들의 존속을 책임졌으므로,</div><br>   
+                    <div class="indented-text_3 it">그의 통치 행위는 책임감 있는 사랑 행위를 의미하였다.</div><br>   
+                </span>
+             </div>
+
+
+
+             <div class="overTextBox clickTextBox" id="overTextBox-9">
+                <span>
+                    <div class="indented-text_0 it">하지만 오만은</div><br>
+                    <div class="indented-text_3 it">관계를 타락시키고</div><br>
+                    <div class="indented-text_0 it">존재는 언어에 의해 오염되었다.</div><br>
+                </span>
+             </div>
+
+             <div class="overTextBox clickTextBox shower" id="overTextBox-9-show">
+                <span>
+                    <div class="indented-text_0 it">인간의 자유의지는 불순종의 행동으로 이어졌고,</div><br>
+                    <div class="indented-text_3 it">이는 창조 질서에 균열을 일으켰으며,</div><br>
+                    <div class="indented-text_0 it">더이상의 유토피아는 없다.</div><br><br>
+                    <div class="indented-text_0 it">언어는 더 이상 사랑과 축복의 도구가 아니게 되었고,</div><br>
+                    <div class="indented-text_0 it">남을 판단하고 규정하는 자기 중심의 무기가 되었다.</div><br>
+                    <div class="indented-text_0 it">남자는 한때 '살 중의 살, 뼈 중의 뼈'라고 불렀던 여자를</div><br>
+                    <div class="indented-text_0 it">'신이 내 곁에 두신 여자'로 불렀다.</div><br><br>
+                    <div class="indented-text_0 it">이름 짓는 것은 이제 이름 지어지는 것의</div><br>
+                    <div class="indented-text_0 it">본질을 왜곡하고 관계를 파괴한다.</div><br><br>
+                    <div class="indented-text_0 it">죽음이 도래하였다.</div><br>
+                    <div class="indented-text_0 it">인간들은 자신의 부끄러운 몸을 죽음의 산물인 가죽으로 가린다.</div><br>
+                </span>
+             </div>
+
+             
+
+
+             <!-- 10 -->
+
+
+             <div class="overTextBox clickTextBox" id="overTextBox-10">
+                <span>
+                    <div class="indented-text_0 it">모두가 다른 언어를 쓰게 되고</div><br>
+                    <div class="indented-text_3 it">철저히 번역 불가능한</div><br>
+                    <div class="indented-text_0 it">타자를 마주한다.</div><br>
+                </span>
+             </div>
+
+             <div class="overTextBox clickTextBox shower" id="overTextBox-10-show">
+                <span>
+                    <div class="indented-text_0 it">인간은 신과의 대면을 선택한다.</div><br>
+                    <div class="indented-text_3 it">이들은 태포에서 시작된 단 하나의 언어를 사용함으로써</div><br>
+                    <div class="indented-text_0 it">힘을 합쳐 지성을 이루고,</div><br><br>
+                    <div class="indented-text_0 it">하늘에 닿을 듯 높은 탑을 쌓기 시작했다.</div><br>
+                    <div class="indented-text_0 it">그들은 탑을 이루는 돌마다 자신의 이름을 새기며</div><br>
+                    <div class="indented-text_0 it">한층 한층 높아져갔다.</div><br>
+                    <div class="indented-text_0 it">이를 바라보던 신은 언어를 뒤섞음으로써</div><br><br>
+                    <div class="indented-text_0 it">그들이 서로 소통할 수 없게 하였고,</div><br>
+                    <div class="indented-text_0 it">서로 다른 언어를 쓰게 되어 소통할 수 없게 된 인간들은</div><br><br>
+                    <div class="indented-text_0 it">탑 쌓는 일을 중단하게 되었다.</div><br>
+                    <div class="indented-text_0 it">이들은 언어로 서로를 구별하고 차별하게 되었으며,</div><br>
+                    <div class="indented-text_0 it">서로 다른 곳으로 흩어져 살게 되었다.</div><br>
+                </span>
+             </div>
+
+
+             
+             <!-- 11 -->
+
+
+             <div class="overTextBox clickTextBox" id="overTextBox-11">
+                <span>
+                    <div class="indented-text_0 it">밀려난 것들을</div><br>
+                    <div class="indented-text_3 it">재호명하는 인간은</div><br>
+                    <div class="indented-text_0 it">다시 오며,</div><br>
+                    <div class="indented-text_0 it">새로운 언어로 불러들인다.</div><br>
+                    <div class="indented-text_0 it">두 번째 만들어진</div><br>
+                    <div class="indented-text_0 it">인간의 모습으로.</div><br>
+                </span>
+             </div>
+
+             <div class="overTextBox clickTextBox shower" id="overTextBox-11-show">
+                <span>
+                    <div class="indented-text_0 it">두 번째 인간이 세상에 오고,</div><br>
+                    <div class="indented-text_3 it">본디 인간의 창조 때에 맡겨졌던 임무인</div><br>
+                    <div class="indented-text_0 it">이름 짓는 일을 다시 수행하기 시작한다.</div><br><br>
+                    <div class="indented-text_0 it">두 번째 인간은 의미가 사라지고</div><br>
+                    <div class="indented-text_0 it">존재가 밀려난 것들이 있는 곳에 가</div><br>
+                    <div class="indented-text_0 it">이들의 잊혔던 이름을 부르고,</div><br>
+                    <div class="indented-text_0 it">새로운 이름을 부여한다.</div><br><br>
+                    <div class="indented-text_0 it">그들에게 다가갈 때에</div><br>
+                    <div class="indented-text_0 it">그들만의 익숙한 언어를 사용하는 것에 주저함이 없고,</div><br>
+                    <div class="indented-text_0 it">정의를 다시 세우기 위해 모욕적인 이름을 외치는 것을</div><br>
+                    <div class="indented-text_0 it">주저하지 않았다.</div><br>
+                    <div class="indented-text_0 it">의미가 흐려지고 왜곡된 것들을</div><br>
+                    <div class="indented-text_0 it">새롭게 정의 내리는 것을 계속했다.</div><br>
+
+                </span>
+             </div>
+
+
+             <!-- 12 -->
+
+             <div class="overTextBox clickTextBox" id="overTextBox-12">
+             <span>
+                 <div class="indented-text_0 it">단 하나의 언어 안에서</div><br>
+                 <div class="indented-text_3 it">모두가 다르지 않고 하나이며</div><br>
+                 <div class="indented-text_0 it">말은</div><br>
+                 <div class="indented-text_0 it">침묵 중에도</div><br>
+                 <div class="indented-text_0 it">선하다.</div><br>
+             </span>
+          </div>
+
+          <div class="overTextBox clickTextBox shower" id="overTextBox-12-show">
+             <span>
+                 <div class="indented-text_0 it">두 번째 사람에게 새로 이름 받은 자들이</div><br>
+                 <div class="indented-text_3 it">한 데 모여 신성한 자와 이야기할 때에,</div><br>
+                 <div class="indented-text_0 it">다른 나라에서 온 이들은</div><br>
+                 <div class="indented-text_0 it">서로의 언어를 이해하고 이야기하는 경험을 한다.</div><br><br>
+                 <div class="indented-text_0 it">한때 뒤죽박죽되고 흩어졌지만,</div><br>
+                 <div class="indented-text_0 it">다시 돌아올 기원의 언어가 도래한다.</div><br>
+                 <div class="indented-text_0 it">다른 존재의 본질을 제대로 번역할 수 있는 수단,</div><br>
+                 <div class="indented-text_0 it">즉 의미 잃은 것들을 재호명하고, 재명명하며, 재정의하는</div><br>
+                 <div class="indented-text_0 it">유토피아의 언어로서.</div><br>
+
+             </span>
+          </div>
+
+
+          
+
+
+
+
+             
+            
+        </div>
+    </div>
+
+  <img class="logo" src="logospace.png" style=" width: 400px; position: absolute; top: 20px; left: 20px; z-index: 3000;"></img>
+
+  <div style="top: 50%; left: 50%; transform: translate(-50%, -50%);
+  display: flex; align-items: center; justify-content: center;
+  width: 55vh; height: 55vh; position: absolute; z-index: 10001;
+  background-color: rgb(255, 255, 255); border-radius: 999px;
+  clip-path: circle(50%);  display: none; " class="sphereMent">
+    <p style="letter-spacing: 0.05px; line-height: 20px; padding: 10px; 
+    font-size: 14px; font-family: sans-serif serif; text-align: center; color: black; overflow: hidden;">2020년 설립된 리틀시스터즈언어창조회(LSLCC)은 평등하고 포용적인 새로운 대안의 언어를 창조할 수 있다고 믿는 자매들의 공동체입니다.
+
+LSLCC는 유토피아적 언어 연구를 위하여 기독교적 성서 속 언어의 기원에 대해 여성주의적 관점에서 재해석한 LSLCC의 성서를 작성했습니다. 이는 남성중심주의, 인간중심주의, 식민주의와 같은 차별의 뿌리가 기독교의 가부장적 문화에서 비롯된 성서의 오역에 있다는 점에 주목하였기 때문입니다.
+
+성서 텍스트를 다시-읽음으로써 신적 권위로 우월하다 여김 받은 것들을 재해석하고, 스스로와 타자를 명명하는 주체가 되며 새 언어의 주인으로 거듭납니다.
+
+    </p>
+  </div>
+
+  <div style="top: 50%; left: 50%; transform: translate(-50%, -50%);
+  display: flex; align-items: center; justify-content: center;
+  width: 55vh; height: 55vh; position: absolute; z-index: 10001;
+  background-color: rgb(255, 255, 255); border-radius: 999px;
+  clip-path: circle(50%);  display: none; " class="sphereMent1">
+    <p style="letter-spacing: 0.05px; line-height: 20px; padding: 10px; 
+    font-size: 14px; font-family: sans-serif serif; text-align: center; color: black; overflow: hidden;">
+ 언어 내에 존재하는 차별을 극복하고자 하는 움직임은 전 지구적으로 존재합니다. 프랑스어의 '포괄적 글쓰기(L'ecriture inclusive)'는 한 사례입니다.
+
+ 예를 들어, 남성이 다른 성에 항상 우선하는 규칙을 가진 프랑스어 문법으로 인해, 여성이나 이분법적인 성별 구분에서 벗어난 논 바이너리(non-binery)는 문장구조 속에서 이차적인 것으로 분류됩니다. 때문에 혼성 집단에 남성이 한 명이라도 존재할 시 이들은 남성 대명사로 지칭됩니다.
+ 
+ '포용적 글쓰기' 이러한 언어적 한계를 해결하기 위해 새로운 문법과 성중립적표현의 방법을 제시하지만, 혼란을 일으킨다는 이유에서 공식적으로 인정받지 못하고 있습니다. 
+
+    </p>
+  </div>
+
+  <div style="top: 50%; left: 50%; transform: translate(-50%, -50%);
+  display: flex; align-items: center; justify-content: center;
+  width: 55vh; height: 55vh; position: absolute; z-index: 10001;
+  background-color: rgb(255, 255, 255); border-radius: 999px;
+  clip-path: circle(50%);  display: none; " class="sphereMent2">
+    <p style="letter-spacing: 0.05px; line-height: 20px; padding: 10px; 
+    font-size: 14px; font-family: sans-serif serif; text-align: center; color: black; overflow: hidden;">
+미국의 페미니스트 신학자인 메리 데일리(Mary Daly)는 저서 『하나님 아버지를 넘어서 - 여성들의 해방 철학을 향하여』 (1973)'에서 '아버지'로 불리는 남성으로서의 하나님이 아닌 유동하고 역동하는 '동사'로서의 하나님 개념을 주장하였습니다.
+
+
+    </p>
+  </div>
+
+  <div style="top: 50%; left: 50%; transform: translate(-50%, -50%);
+  display: flex; align-items: center; justify-content: center;
+  width: 55vh; height: 55vh; position: absolute; z-index: 10001;
+  background-color: rgb(255, 255, 255); border-radius: 999px;
+  clip-path: circle(50%);  display: none; " class="sphereMent3">
+    <p style="letter-spacing: 0.05px; line-height: 20px; padding: 10px; 
+    font-size: 14px; font-family: sans-serif serif; text-align: center; color: black; overflow: hidden;">
+"난 현재 우리가 사용하는 언어가 덫으로 가득 차 있음을 알고있 다. 언어가 비록 보편성을 주장하지만 실제로는 언어를 만들어온 남성의 가면을 쓰고 있다. 따라서 언어는 남성의 가치관, 남성의 주장, 남성의 편견을 반영할 뿐이다." - 시몬 드 보부아르
+Marna Yaguello, 『언어와 여성』 , 강주헌 옮김, 여성사, 1994, P5-6
+
+
+
+    </p>
+  </div>
+
+
+  <div id="container"></div>
+  <div id="css-container"></div>
+  
+  <div class="box-3d" style="
+    font-size: 18px; 
+    color: white; 
+    position: absolute; 
+    width: 300px;           /* 충분한 너비 설정 */
+    height: auto;           /* 높이 자동 조정 */
+    padding: 20px;          /* 여백 추가 */
+    white-space: nowrap;    /* 텍스트 줄바꿈 방지 */
+    overflow: visible;      /* 내용이 넘쳐도 보이게 설정 */
+    transform-style: preserve-3d;
+    z-index: 1000;         /* 다른 요소들보다 앞에 보이도록 설정 */
+">
+    <!-- 안녕하세요 테트 글입니다.... -->
+</div>
+
+<div class="closeMentBtn" style=" display: none; position: absolute; color: white; font-weight: 300; font-size: 80px; bottom: 20px; right: 20px; z-index: 99999999999; cursor: pointer;">X</div>
+
+<script>
+const overHtml = document.querySelector('.overHtml');
+
+overHtml.addEventListener('scroll', () => {
+    console.log(`Scroll position: ${overHtml.scrollLeft}`);
+});
+</script>
+
+
+  <script>
+    const box = document.querySelector('.box');
+
+    // box.addEventListener('wheel', (event) => {
+    //     event.preventDefault(); // 기본 스크롤 동작 방지
+    //     box.scrollLeft += event.deltaY; // 세로 크롤을 가로 스크롤로 변환
+    // });
+
+    document.querySelector('.closeMentBtn').addEventListener('click', () => {
+        // document.querySelector('.closeMentBtn').style.display = 'none';
+        document.querySelector('.sphereMent').style.display = 'none';
+        document.querySelector('.sphereMent1').style.display = 'none';
+        document.querySelector('.sphereMent2').style.display = 'none';
+        document.querySelector('.sphereMent3').style.display = 'none';
+        document.querySelector('.closeMentBtn').style.display = 'none';
+    });
+
+    document.querySelector('.sphereMent').addEventListener('click', () => {
+        document.querySelector('.sphereMent').style.display = 'none';
+    });
+
+    document.querySelector('.sphereMent1').addEventListener('click', () => {
+        document.querySelector('.sphereMent1').style.display = 'none';
+    });
+
+    document.querySelector('.sphereMent2').addEventListener('click', () => {
+        document.querySelector('.sphereMent2').style.display = 'none';
+    });
+
+    document.querySelector('.sphereMent3').addEventListener('click', () => {
+        document.querySelector('.sphereMent3').style.display = 'none';
+    });
+
+    document.querySelector('#overTextBox-8').addEventListener('mouseover', () => {
+        document.querySelector('#overTextBox-8-show').style.opacity = '1';
+        document.querySelector('#overTextBox-8-show').style.filter = 'blur(0px)';
+    });
+    document.querySelector('#overTextBox-8').addEventListener('mouseout', () => {
+        document.querySelector('#overTextBox-8-show').style.opacity = '0';
+        document.querySelector('#overTextBox-8-show').style.filter = 'blur(3px)';
+    });
+
+
+    document.querySelector('#overTextBox-9').addEventListener('mouseover', () => {
+        document.querySelector('#overTextBox-9-show').style.opacity = '1';
+        document.querySelector('#overTextBox-9-show').style.filter = 'blur(0px)';
+    });
+    document.querySelector('#overTextBox-9').addEventListener('mouseout', () => {
+        document.querySelector('#overTextBox-9-show').style.opacity = '0';
+        document.querySelector('#overTextBox-9-show').style.filter = 'blur(3px)';
+    });
+
+    document.querySelector('#overTextBox-10').addEventListener('mouseover', () => {
+        document.querySelector('#overTextBox-10-show').style.opacity = '1';
+        document.querySelector('#overTextBox-10-show').style.filter = 'blur(0px)';
+    });
+    document.querySelector('#overTextBox-10').addEventListener('mouseout', () => {
+        document.querySelector('#overTextBox-10-show').style.opacity = '0';
+        document.querySelector('#overTextBox-10-show').style.filter = 'blur(3px)';
+    });
+
+    document.querySelector('#overTextBox-11').addEventListener('mouseover', () => {
+        document.querySelector('#overTextBox-11-show').style.opacity = '1';
+        document.querySelector('#overTextBox-11-show').style.filter = 'blur(0px)';
+    });
+    document.querySelector('#overTextBox-11').addEventListener('mouseout', () => {
+        document.querySelector('#overTextBox-11-show').style.opacity = '0';
+        document.querySelector('#overTextBox-11-show').style.filter = 'blur(3px)';
+    });
+
+    document.querySelector('#overTextBox-12').addEventListener('mouseover', () => {
+        document.querySelector('#overTextBox-12-show').style.opacity = '1';
+        document.querySelector('#overTextBox-12-show').style.filter = 'blur(0px)';
+    });
+    document.querySelector('#overTextBox-12').addEventListener('mouseout', () => {
+        document.querySelector('#overTextBox-12-show').style.opacity = '0';
+        document.querySelector('#overTextBox-12-show').style.filter = 'blur(3px)';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script >
+   
+        // Three.js 기본 설정
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        document.body.appendChild(renderer.domElement);
+
+        // 카메라 초기 위치 설정
+        camera.position.set(0, -2, 50);
+
+        // 창 크기 변경 시 렌더러와 카메라 업데이트
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+              // 그리드 헬퍼 추가
+              const gridHelper = new THREE.GridHelper(10000, 500);
+        // gridHelper.position.y = -20;
+        gridHelper.position.y = -30;
+      
+        // gridHelper.rotation.x = Math.PI / 2;
+        // scene.add(gridHelper);
+
+        // 기기 감지
+        const isMobileOrTablet = /Mobi|Android|iPad|iPhone/i.test(navigator.userAgent);
+
+        if (isMobileOrTablet) {
+            // 모바일 및 태블릿 기기에서 터치 이벤트로 카메라 이동
+            let touchStartX = 0;
+            let touchStartY = 0;
+
+            function handleTouchStart(event) {
+                touchStartX = event.touches[0].clientX;
+                touchStartY = event.touches[0].clientY;
+            }
+
+            function handleTouchMove(event) {
+                const touchEndX = event.touches[0].clientX;
+                const touchEndY = event.touches[0].clientY;
+
+                const deltaX = (touchEndX - touchStartX) * 0.05; // 가로 이동 양 조정
+                const deltaY = (touchEndY - touchStartY) * 0.05; // 세로 이동 양 조정
+
+                camera.position.x += deltaX; // 카메라 x축 이동
+                camera.position.x += deltaY; // 카메라 z축 동
+                overHtml.scrollLeft += deltaX;
+                touchStartX = touchEndX;
+                touchStartY = touchEndY;
+
+                // 이동한 정도를 콘솔에 출력
+                console.log(`Camera Position - X: ${camera.position.x}, Y: ${camera.position.y}, Z: ${camera.position.z}`);
+            }
+
+            window.addEventListener('touchstart', handleTouchStart);
+            window.addEventListener('touchmove', handleTouchMove);
+        } else {
+            // 데스크톱에서 휠 이벤트로 카메라 이동
+            function handleScroll(event) {
+                const scrollAmountX = event.deltaX * 0.1; // 가로 스크롤 양 조정
+                const scrollAmountY = event.deltaY * 0.1; // 세로 스크롤 양 조정
+                camera.position.x += scrollAmountX; // 카메라 x축 이동
+                camera.position.x += scrollAmountY; // 카메라 z축 이
+                
+                // 스크롤한 정도를 콘솔에 출력
+                console.log(`Camera Position - X: ${camera.position.x}, Y: ${camera.position.y}, Z: ${camera.position.z}`);
+            }
+            window.addEventListener('wheel', handleScroll);
+        }
+
+    // 카메라 위치 변경에 따른 스크롤 업데이트
+    function updateScrollWithCamera() {
+        const cameraX = camera.position.x;
+        overHtml.scrollLeft = cameraX * 10; // 스크롤 위치를 카메라 위치에 맞게 조정
+    }
+
+
+        // 텍스처 로더 생성
+const textureLoaderbg = new THREE.TextureLoader();
+
+
+
+// 배경 이미지 로드 및 설정
+textureLoaderbg.load('bg.png', function(texture) {
+    scene.background = texture;
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(1, 1); // 반복 설정
+
+    // 스크롤 위치를 추적하여 배경 이동
+    function updateBackground() {
+        const scrollY = window.scrollY;
+        texture.offset.y = scrollY * 0.1; // 스크롤에 따라 y 오프셋 조정
+        requestAnimationFrame(updateBackground); // 애니메이션 루프
+    }
+    updateBackground();
+});
+
+
+
+        // 첫번째 박스입니다!!!!
+
+        // 캔버스를 사용하여 텍스트 생성
+        function createTextTexture(text) {
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = 512;
+            canvas.height = 512;
+            // context.fillStyle = 'rgba(20, 20, 20,1)';
+            context.fillStyle = 'rgba(255,255,255,1)' ;
+
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            context.fillStyle = 'black';
+            context.font = 'bold 100px serif';
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            context.fillText(text, canvas.width / 2, canvas.height / 2);
+
+            return new THREE.CanvasTexture(canvas);
+        }
+
+        // const texts = ["언어에", "수반되는", "차별또한", "정당하게", "여겨집니다"];
+        const texts = ["어", "공동체", "로", "존재", "하는"];
+
+        // 구 생성 및 정육면체로 배치하는 함수
+        const sphereGeometry = new THREE.SphereGeometry(8, 100,30); // 구체의 반지름과 세그먼트 설정
+
+        function createSpheresWithText(texts, numSpheres, xPosition) {
+            const spheres = [];
+            const radius = 2; // 구의 반지름 설정
+
+            for (let i = 0; i < numSpheres; i++) {
+                const theta = Math.acos(2 * Math.random() - 1); // 세타 각도
+                const phi = 2 * Math.PI * Math.random(); // 파이 각도
+
+                const x = xPosition + radius * Math.sin(theta) * Math.cos(phi) * 10;
+                const y = radius * Math.sin(theta) * Math.sin(phi) * -10;
+                const z = radius * Math.cos(theta) * 10;
+
+                const textTexture = createTextTexture(texts[i % texts.length]); // 각 박스에 유한 텍스트 할당
+
+                // 텍스처 반복 설정
+                textTexture.wrapS = THREE.RepeatWrapping;
+                textTexture.wrapT = THREE.RepeatWrapping;
+                textTexture.repeat.set(5, 1); // 텍스처 반복 횟수 설정
+
+                const sphereMaterial = new THREE.MeshBasicMaterial({
+                    map: textTexture,
+                });
+                const sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
+                sphereMesh.position.set(x, y, z); // 위치 설정
+                scene.add(sphereMesh);
+                spheres.push(sphereMesh);
+            }
+            return spheres;
+        }
+
+        // 구 배열 생성 호출
+        const numSpheres = 15;
+        const xPosition = 50; // 원하는 x 위치 설정
+        const spheresResult1 = createSpheresWithText(texts, numSpheres, 0);
+        const spheresResult2 = createSpheresWithText(["언어에", "의해", "비가시화된"], 10, 700);
+        const spheresResult3 = createSpheresWithText(["신이", "남성이라면,", "남성이 신", "메리 데일리"], 5, 900);
+        const spheresResult4 = createSpheresWithText(["언어에", "수반되는", "차별", "또한","정당하게","여겨집니다."], 10, 1055);
+
+
+
+        //이거 구 배열 클릭시 
+        // 구 배열 생성 호출
+// const spheresResult1 = createSpheres(3); // 3x3x3 배열 생성
+function addSphereInteractions(spheres, interactionHandler) {
+    spheres.forEach(sphere => {
+        sphere.userData = { isClicked: false }; // 클릭 상태를 저장할 속성 추가
+
+        sphere.onClick = function() {
+            console.log('클릭:', camera.position.x);
+            // sphere.userData.isClicked = true;
+            if({})
+            if (camera.position.x < 500) {
+                document.querySelector('.sphereMent').style.display = 'flex';
+                document.querySelector('.closeMentBtn').style.display = 'block';
+            } else if (camera.position.x >= 500 && camera.position.x < 800) {
+                document.querySelector('.sphereMent1').style.display = 'flex';
+                document.querySelector('.closeMentBtn').style.display = 'block';
+} else if (camera.position.x >= 800 && camera.position.x < 1000) {
+    document.querySelector('.sphereMent2').style.display = 'flex';
+    document.querySelector('.closeMentBtn').style.display = 'block';
+} else if (camera.position.x >= 1000) {
+                document.querySelector('.sphereMent3').style.display = 'flex';
+                document.querySelector('.closeMentBtn').style.display = 'block';
+            }
+
+        };
+
+        sphere.onHover = function(isHovering) {
+            const targetScale = isHovering ? 1.3 : 1; // 목표 크기 설정
+            const scaleSpeed = 0.05; // 크기 변화 속도 설정
+
+            const animateScale = () => {
+                sphere.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), scaleSpeed);
+                if (Math.abs(sphere.scale.x - targetScale) > 0.01) {
+                    requestAnimationFrame(animateScale);
+                }
+            };
+            animateScale();
+        };
+    });
+
+    window.addEventListener('click', interactionHandler);
+    window.addEventListener('mousemove', interactionHandler);
+}
+
+function createSphereInteractionHandler(spheres) {
+    return function(event) {
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(spheres);
+
+        spheres.forEach(sphere => sphere.onHover(false)); // 모든 구체의 호버 상태 초기화
+
+        if (intersects.length > 0) {
+            intersects[0].object.onHover(true); // 호버된 구체의 크기 증가
+            if (event.type === 'click') {
+                intersects[0].object.onClick();
+            }
+        }
+    };
+}
+
+// 기존 코드 대체
+addSphereInteractions(spheresResult1, createSphereInteractionHandler(spheresResult1));
+addSphereInteractions(spheresResult2, createSphereInteractionHandler(spheresResult2));
+addSphereInteractions(spheresResult3, createSphereInteractionHandler(spheresResult3));
+addSphereInteractions(spheresResult4, createSphereInteractionHandler(spheresResult4));
+
+// ... existing code ...
+
+        // 첫번째 박스 종료!!!!
+
+
+        // 글 성 면 시작!!!!
+function wrapText(context, text, maxWidth) {
+    const words = text.split(' ');
+    const lines = [];
+    let currentLine = words[0];
+
+    for (let i = 1; i < words.length; i++) {
+        const word = words[i];
+        const width = context.measureText(currentLine + " " + word).width;
+        if (width < maxWidth) {
+            currentLine += " " + word;
+        } else {
+            lines.push(currentLine);
+            currentLine = word;
+            }
+        }
+        lines.push(currentLine);
+        return lines;
+        }   
+
+        function createTextPlane(text, position) {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = 1024;
+    canvas.height = 1024;
+    context.fillStyle = 'rgba(0, 0, 0, 0.0)';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = 'white';
+    context.font = 'bold 38px serif';
+    context.textAlign = 'center';
+    context.filter = 'blur(0px)';  
+    const lines = wrapText(context, text, 700);
+    const lineHeight = 80;
+    lines.forEach((line, index) => {
+        context.fillText(line, canvas.width / 2, 50 + (index * lineHeight));
+    });
+
+    const texture = new THREE.CanvasTexture(canvas);
+    const material = new THREE.MeshBasicMaterial({
+        map: texture,
+        transparent: true,
+        side: THREE.DoubleSide,
+        opacity: 0.95
+    });
+
+    const planeMesh = new THREE.Mesh(new THREE.PlaneGeometry(25, 25), material);
+    planeMesh.position.set(position.x, position.y, position.z);
+
+    scene.add(planeMesh);
+    return planeMesh;
+}
+// 사용
+createTextPlane("리틀 시스터즈 언어창조회는", { x: 60, y: -15, z: 24 });
+createTextPlane("언어의 기원을 추적하며", { x: 60, y: -17, z: 24 });
+createTextPlane("인간에게 주어졌던", { x: 65, y: -19, z: 24 });
+createTextPlane("성스러운 언어의", { x: 60, y: -21, z: 24 });
+createTextPlane("형상을 상상하고 재구성함으로써", { x: 65, y: -23, z: 24 });
+createTextPlane("새로운 언어를 준비하는 창조 공동체이다.", { x: 60, y: -25, z: 24 });
+// const secondText = createTextPlane("언어에 대한 조종과 통제에 의해 우리의 생각과 행동은 움직여집니다. 이것을 우리는 언어의 정치성 이라고 부릅니다. 리틀 시스터즈의 방법론은 권력자들이 사용하는 언어적 규칙들을 정치적이고 창의적으로 유희하고,  대안의 언어를 창조합니다..", { x: 62, y: -4, z: 25 });
+// const triangleText = createTextPlane("실재하는 어적 유토피아, 우리의 실존하는 장소, 그 헤테로토피아에 도달하기 위한 재호명 - 재정의 - 재명명", { x: 110, y: -7, z: 25});
+// const rotatePlane1 = createTextPlane("리틀시스터즈언어창조회는 인간과 언어의 기원의 때 성스러운 존재와 화합의 도구이던 유토피아적 언어의 복구를 통해 인간, 신, 자연의 평등한 관계를 회복하려는 평등 공동체이다.", { x: 590, y: -3, z: 25 });
+// const rotatePlane2 = createTextPlane("신어는 사고의 영역을 넓히기 위해서가 아니라 '줄이기' 위해서 만들어진 만큼, 어휘 선택을 최소한도로 줄 우리는 것도 신의 고안 목적을 달성하는 데 간접적으로나마 도움이 되었다. p.420 조지 오웰, 『1984』, 정희성 옮, 민음사 (2003)", { x: 610, y: -3, z: 25 });
+// const rotatePlane3 = createTextPlane("신어의 고안 적은 영사의 신봉들에게 걸은 세계관과 정신 습관에 대한 표현 수단 제공함과 동시에 영사 이외의 다른 사상을 갖지 못하도록 하는 데 있다. 적어도 사상이 언어에 의존하는 한, 신어가 일단 전면적으로 채택되고 구어가 잊히게 되면 이단적 사상, 즉 영사의 칙에 위배되는 사상은 그야말로 설 자리가 없게 된다. p.419", { x: 630, y: -3, z: 25 });
+// const rotatePlane4 = createTextPlane("리틀 시스터즈 언어창조회는 조지 오웰 (George Orwell)의 소설 『1984』(1949)에 등장하는 전체주의 권력집단 빅 브라더와 대조되는 이름입니다. 소설 속 빅브라더가 만들어내는 신어(新語, Newspeak)가 권력을 통해 억압을 강화한다, 리틀 시스터즈의 언어는 언어의 권력 불평등을 해소함으로써 기존 권력에 저항하는 것을 목표로 합니다. 빅 브라더의 언어 관료적이고 하향식이며 권위적이지만, 리틀 시스터즈의 언어는 창조적이고 상향식이며 저항적입니다.", { x: 650, y: -3, z: 25 });
+createTextPlane("리틀 시스터즈 언어창조회는", { x: 592, y: -15, z: 24 });
+createTextPlane("인간과 언어의 기원의 때", { x: 590, y: -17, z: 24 });
+createTextPlane("성스러운 존재와 화합의 도구이던", { x: 594, y: -19, z: 24 });
+createTextPlane("유토피아적 언어의 복구를 통해", { x: 590, y: -21, z: 24 });
+createTextPlane("인간, 신, 자연의 평등한", { x: 595, y: -23, z: 24 });
+createTextPlane("관계를 회복하려는 평등 공동체이다.", { x: 590, y: -25, z: 24 });
+// createTextPlane("언어 공동체 존재하는 . 리틀 시스터즈 언어 창회는 언어의 기원 추적하며 인간게 주어졌던 성스러운 언어의 형사을 상상하고 재구성함으로써 새로운 언어를 준비하는 창조 공동체이다", { x: 670, y: -5, z: 24 });
+// createTextPlane("언어에 대한 종과 통제에 의해 리의 생각과 행동은 움직집니다. 이것을 우리는 언어의 정치성이라고 부릅니다. 리틀 시스터즈의 방법론은 권력자들이 사용하는 언어적 규칙들을 정치적이고 창의적으로 유희하고, 대안의 언어를 창조합니다.", { x: 690, y: -5, z: 24 });
+// createTextPlane("언어는 집단에 의해 동의받고, 권위에 의해 승인된 결과로 여겨지므로, 말이 함의하는 의미는 정당성을 인정으며,", { x: 710, y: -5, z: 24 });
+// createTextPlane("공동의 독서, 침묵의 대화, 교차하며 읽기, 허구, 비선형적 글쓰기, 자동기술법, 문법의 창조적 파괴, 시와 문학, 말-놀이, 쓰기와 다시 쓰기, 읽기와 다시 읽기는 리틀 시스터즈의언어니다.", { x: 730, y: -4, z: 24 });
+// createTextPlane("리틀 시스터즈 언어창조회는 인간과 언어의 기원의 때 성스러운 존재와 화합의 도구이던 유토피아적 언어의 복구를 통해 인간, 신, 자연의 평등한 관계를 회복하려는 평등 공동체이다.", { x: 230, y: -3, z: 24 });
+// createTextPlane("LSLCC는 타인에 한 착취를 정당화하는 가부장적 이념에 따라 자행되는 모든 차별과 계층 간의 착취와 종말을 향해가는 환경 파괴는 유토피아적 창조의 원리를 배반합니다", { x: 210, y: -3, z: 24 });
+// createTextPlane("  차별적 언어는 대상에 대해 편향된 인식을 심어주거나 암시하며, 폭력적인 진부한 표현을 재생산합니다.", { x: 250, y: -3, z: 24 });
+// createTextPlane("공동의 독서, 침묵의 대화,    교차하며 읽기, 허구, 비선형적 글쓰기, 자동기술법, 문법의 창조적 파괴, 시와 문학, 말-놀이, 쓰기와 다시 쓰기, 읽기와 다시 읽기는 리틀 시스터즈의 언어입니다.", { x: 1000, y: -4, z: 24 });
+// createTextPlane("모여 앉을 수 있는 푹신한 자리는 액체처럼 유연하고 포용적이며 하나의 움직임으로  운동하는 리틀  시스터즈의 장소적  발현입니다.", { x: 1040, y: -4, z: 24 });
+// createTextPlane("공동의 독서, 침묵의 대화,    교차하며 읽기, 허구, 비선형적 글쓰기, 자동기술법, 문법의 창조적 파괴, 시와 문학, 말-놀이, 쓰기와 다시 쓰기, 읽기와 다시 읽기는 리틀 시스터즈의 언어입니다.", { x: 1020, y: -4, z: 24 });
+createTextPlane("리틀 시스터즈 언어창조회는", { x: 1182, y: -15, z: 24 });
+createTextPlane("태초의 언어에서 발견되는", { x: 1180, y: -17, z: 24 });
+createTextPlane("언어의 포용적이고 창조적인", { x: 1184, y: -19, z: 24 });
+createTextPlane("본래의 기능을 되찾고", { x: 1179, y: -21, z: 24 });
+createTextPlane("서로 다른 존재들을 재정의하는", { x: 1185, y: -23, z: 24 });
+createTextPlane("함께 연구하는 연대 공동체이다.", { x: 1180, y: -25, z: 24 });
+
+createTextPlane("공동의 독서, 침묵의 대화,", { x: 1200, y: -13, z: 24 });
+createTextPlane("교차하며 읽기, 허구,", { x: 1200, y:  -15, z: 24 });
+createTextPlane("비선형적 글쓰기,", { x: 1200, y:  -17, z: 24 });
+createTextPlane("자동기술법, 문법의 창조적 파괴,", { x: 1200, y: -19, z: 24 });
+createTextPlane("시와 문학, 말-놀이,", { x: 1202, y: -21, z: 24 });
+createTextPlane("쓰기와 다시 쓰기,", { x: 1206, y: -23, z: 24 });
+createTextPlane("읽기와 다시 읽기는", { x: 1205, y: -25, z: 24 });
+createTextPlane("리틀 시스터즈의", { x: 1202, y: -27, z: 24 });
+createTextPlane("언어 입니다.", { x: 1200, y: -29, z: 24 });
+
+
+createTextPlane("모여 앉을 수 있는", { x: 1220, y:-12 , z: 24 });
+createTextPlane("푹신한 자리는 액체처럼", { x: 1220, y: -14, z: 24 });
+createTextPlane("유연하고", { x: 1223, y: -16, z: 24 });
+createTextPlane("포용적이며 하나의", { x: 1220, y: -18, z: 24 });
+createTextPlane("움직임으로", { x: 1222, y: -20, z: 24 });
+createTextPlane("운동하는 리틀", { x: 1220, y: -22, z: 24 });
+createTextPlane("시스터즈의 장소적", { x: 1226, y: -24, z: 24 });
+createTextPlane("발현입니다.", { x: 1223, y: -26, z: 24 });
+
+
+
+// 글 생성 면 종료!!!!
+
+// 삼각형 생성 
+
+// tri.png 이미지를 plane으로 추가
+const textureLoaderTri = new THREE.TextureLoader();
+
+// tri.png 이미지를 plane으로 추가
+const triTexture = textureLoaderTri.load('tria.png');   
+const triMaterial = new THREE.MeshBasicMaterial({
+    map: triTexture,
+    side: THREE.DoubleSide,
+    transparent: true
+});
+const triPlane = new THREE.Mesh(new THREE.PlaneGeometry(50, 50), triMaterial);
+triPlane.position.set(200, 0, 0);
+scene.add(triPlane);
+
+// ... existing code ...
+
+// 클릭 및 호버 이벤트 핸들러 추가
+const mouse = new THREE.Vector2(); // mouse 선언 위치 이동
+
+// 삼각형 종료
+
+//마크업 부분 드래그 
+
+// 마크업 부분 종료
+
+    // 잡고 움직이는 plane 시작
+
+const raycaster = new THREE.Raycaster();
+// const mouse = new THREE.Vector2();
+let selectedPlane = null;
+let offset = new THREE.Vector3();
+const draggablePlanes = [];
+const planeGeometry = new THREE.BoxGeometry(5, 40, 30);
+
+// 텍스처 로더 생성
+const textureLoader = new THREE.TextureLoader();
+const textures = [
+    textureLoader.load('book1.png'),
+    textureLoader.load('book2.png'),
+    textureLoader.load('book3.png'),
+    textureLoader.load('book4.png'),
+    textureLoader.load('book5.png'),
+    textureLoader.load('book6.png'),
+    textureLoader.load('book7.png'),
+    textureLoader.load('book8.png'),
+    textureLoader.load('book9.png'),
+    textureLoader.load('book10.png'),
+    textureLoader.load('book11.png'),
+    textureLoader.load('book12.png'),
+    
+];
+
+for (let i = 0; i < 12; i++) {
+    const planeMaterial = new THREE.MeshBasicMaterial({ 
+        map: textures[i], // 각 plane에 고유한 텍스처 적용
+        side: THREE.DoubleSide,
+        wireframe: false // 메쉬 선으로 보이게 설정 해제
+    });
+
+    const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+    plane.position.set(i * 10 + 750, (Math.random() * -30) + 10, (Math.random() * -30) - 1); // y값에 -5에서 5 사이의 랜덤값 추가
+    
+    plane.rotation.set(0.1745, 0.1745, 0.1745); // x, y, z 축 각각 10도 회전
+
+    scene.add(plane);
+    draggablePlanes.push(plane);
+}
+
+function onMouseDown(event) {
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(draggablePlanes);
+
+    if (intersects.length > 0) {
+        selectedPlane = intersects[0].object;
+        const intersectPoint = intersects[0].point;
+        offset.copy(intersectPoint).sub(selectedPlane.position);
+    }
+}
+
+function onMouseMove(event) {
+    if (selectedPlane) {
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+        raycaster.setFromCamera(mouse, camera);
+        const planeIntersect = raycaster.intersectObject(selectedPlane);
+
+        if (planeIntersect.length > 0) {
+            const intersectPoint = planeIntersect[0].point;
+            const targetPosition = intersectPoint.sub(offset);
+            targetPosition.z += 0.1; // 목�� z 위치 설정
+
+            // 현재 위치와 목표 위치 사이를 부드럽게 이동
+            selectedPlane.position.lerp(targetPosition, 0.1);
+        }
+    }
+}
+
+function onMouseUp() {
+    selectedPlane = null;
+}
+
+// 터치 이벤트 핸들러 추가
+function onTouchStart(event) {
+    if (event.touches.length === 1) {
+        mouse.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.touches[0].clientY / window.innerHeight) * 2 + 1;
+
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(draggablePlanes);
+
+        if (intersects.length > 0) {
+            selectedPlane = intersects[0].object;
+            const intersectPoint = intersects[0].point;
+            offset.copy(intersectPoint).sub(selectedPlane.position);
+        }
+    }
+}
+
+function onTouchMove(event) {
+    if (selectedPlane && event.touches.length === 1) {
+        mouse.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.touches[0].clientY / window.innerHeight) * 2 + 1;
+
+        raycaster.setFromCamera(mouse, camera);
+        const planeIntersect = raycaster.intersectObject(selectedPlane);
+
+        if (planeIntersect.length > 0) {
+            const intersectPoint = planeIntersect[0].point;
+            const targetPosition = intersectPoint.sub(offset);
+            targetPosition.z += 0.1; // 목표 z 위치 설정
+
+            // 현재 위치와 목표 위치 사이를 부드럽게 이동
+            selectedPlane.position.lerp(targetPosition, 0.1);
+        }
+    }
+}
+
+function onTouchEnd() {
+    selectedPlane = null;
+}
+
+// 이벤트 리스트 추가
+window.addEventListener('mousedown', onMouseDown);
+window.addEventListener('mousemove', onMouseMove);
+window.addEventListener('mouseup', onMouseUp);
+
+window.addEventListener('touchstart', onTouchStart);
+window.addEventListener('touchmove', onTouchMove);
+window.addEventListener('touchend', onTouchEnd);
+
+// 잡고 움직이는 plane 종료
+
+
+
+
+// 시계 시작
+const clockGroup = new THREE.Group();
+clockGroup.position.set(550, 0, 0); // 시계의 위치 설정
+scene.add(clockGroup);
+
+// 중심에 작은 원 추가
+const smallCircleGeometry = new THREE.CircleGeometry(1, 32);
+const smallCircleMaterial = new THREE.MeshBasicMaterial({ color: 'white' });
+const smallCircle = new THREE.Mesh(smallCircleGeometry, smallCircleMaterial);
+clockGroup.add(smallCircle);
+
+// 외각에 큰 원 추가
+const largeCircleGeometry = new THREE.RingGeometry(30, 30.1, 104);
+const largeCircleMaterial = new THREE.MeshBasicMaterial({ color: 'white', side: THREE.DoubleSide });
+const largeCircle = new THREE.Mesh(largeCircleGeometry, largeCircleMaterial);
+clockGroup.add(largeCircle);
+// 시침, 분침, 초침 추가
+const bladeGeometry = new THREE.PlaneGeometry(8, 11);
+const bladeGeometry2 = new THREE.PlaneGeometry(8, 28);
+const bladeGeometry3= new THREE.PlaneGeometry(8, 18);
+
+
+// 텍스처 로더 생성
+const textureLoaderClock = new THREE.TextureLoader();
+
+// 각 시계 바늘에 다른 텍스처 적용
+const hourHandTexture = textureLoaderClock.load('c_la.png');
+const minuteHandTexture = textureLoaderClock.load('c_mul.png');
+const secondHandTexture = textureLoaderClock.load('c_soft.png');
+
+const hourHandMaterial = new THREE.MeshBasicMaterial({ 
+    map: hourHandTexture,
+    transparent: true, // 투명도 활성화
+    alphaTest: 0.5 // 알파 테스트 값 설정 (필요에 따라 조정)
+});
+
+const minuteHandMaterial = new THREE.MeshBasicMaterial({ 
+    map: minuteHandTexture,
+    transparent: true,
+    alphaTest: 0.5
+});
+
+const secondHandMaterial = new THREE.MeshBasicMaterial({ 
+    map: secondHandTexture,
+    transparent: true,
+    alphaTest: 0.5
+});
+
+const hourHand = new THREE.Mesh(bladeGeometry, hourHandMaterial);
+const minuteHand = new THREE.Mesh(bladeGeometry3, minuteHandMaterial);
+const secondHand = new THREE.Mesh(bladeGeometry2, secondHandMaterial);
+
+hourHand.position.set(0, 0, 0);
+minuteHand.position.set(0, -1, 0);
+secondHand.position.set(0, -1, 0);
+
+hourHand.geometry.translate(0, -8, 0);
+minuteHand.geometry.translate(0, -12, 0);
+secondHand.geometry.translate(0, -20, 0);
+
+clockGroup.add(hourHand);
+clockGroup.add(minuteHand);
+clockGroup.add(secondHand);
+
+function updateClockHands() {
+    const now = new Date();
+    const hours = now.getHours() % 12;
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    const hourAngle = (hours + minutes / 60) * (Math.PI / 6); // 360도 / 12시간 = 30도
+    const minuteAngle = (minutes + seconds / 60) * (Math.PI / 30); // 360도 / 60분 = 6도
+    const secondAngle = seconds * (Math.PI / 30); // 360도 / 60초 = 6도
+
+    hourHand.rotation.z = -hourAngle;
+    minuteHand.rotation.z = -minuteAngle;
+    secondHand.rotation.z = -secondAngle;
+}
+
+function animateClock() {
+    updateClockHands();
+    const time = Date.now() * 0.001;
+    // ... existing code for square animation ...
+}
+
+animateClock();
+
+// 시계 종료
+
+// 시계 침 시작
+
+
+
+// 시계 침 종료
+
+// 잡고 움직이는 네모 시작
+function createDraggableSquareWithText(text, position) {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width =  1024;
+    canvas.height = 256;
+    context.fillStyle = 'rgba(255, 255, 255, 1.0)';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = 'black';
+    context.font = 'bold 60px serif';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText(text, canvas.width / 2, canvas.height / 2);
+
+    const texture = new THREE.CanvasTexture(canvas);
+    const material = new THREE.MeshBasicMaterial({ map: texture });
+
+    const squareGeometry = new THREE.BoxGeometry(36, 12, 3);
+    const square = new THREE.Mesh(squareGeometry, material);
+    square.position.set(position.x, position.y, position.z);
+    scene.add(square);
+
+    // 드래그 기능 추가
+    square.userData = { isDragging: false };
+    square.onMouseDown = function(event) {
+        square.userData.isDragging = true;
+    };
+    square.onMouseMove = function(event) {
+        if (square.userData.isDragging) {
+            const mouse = new THREE.Vector2(
+                (event.clientX / window.innerWidth) * 2 - 1,
+                -(event.clientY / window.innerHeight) * 2 + 1
+            );
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObject(square);
+            if (intersects.length > 0) {
+                const intersectPoint = intersects[0].point;
+                square.position.x = intersectPoint.x; // x축 위치만 업데이트
+                square.position.y = intersectPoint.y; // y축 위치만 업데이트
+                // z축 위치는 업데이트하지 않음
+            }
+        }
+    };
+    square.onMouseUp = function() {
+        square.userData.isDragging = false;
+    };
+
+    window.addEventListener('mousedown', square.onMouseDown);
+    window.addEventListener('mousemove', square.onMouseMove);
+    window.addEventListener('mouseup', square.onMouseUp);
+
+    return square;
+}
+
+// 사용 예시
+createDraggableSquareWithText("언술^객체에서 언술^ 주체로", { x: 240, y: 14, z: -30 });
+createDraggableSquareWithText("지배-종속에서 평등-화합으로", { x: 270, y: -8, z: -30 });
+createDraggableSquareWithText("축소∽제한에서 창조∽ 확장으로", { x: 300, y: 14, z: -30 });
+
+// 잡고 움직이는 네모 종료
+
+
+// 작성되는 텍스트 시작
+function typeTextOnPlane(text, position, duration, rotation) {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = 1024;
+    canvas.height = 256;
+    context.fillStyle = 'rgba(0, 0, 0, 0.0)';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = 'white';
+    context.font = 'bold 60px sans-serif';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+
+    const texture = new THREE.CanvasTexture(canvas);
+    const material = new THREE.MeshBasicMaterial({
+        map: texture,
+        transparent: true,
+        side: THREE.DoubleSide,
+        opacity: 0.95
+    });
+
+    const planeMesh = new THREE.Mesh(new THREE.PlaneGeometry(100, 24), material);
+    planeMesh.position.set(position.x, position.y, position.z);
+    scene.add(planeMesh);
+
+    // 회전 설정
+    planeMesh.rotation.set(rotation.x, rotation.y, rotation.z);
+
+    let index = 0;
+    function type() {
+        if (index <= text.length) {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.fillText(text.substring(0, index), canvas.width / 2, canvas.height / 2);
+            texture.needsUpdate = true;
+            index++;
+            setTimeout(type, duration / text.length);
+        } else {
+            setTimeout(() => {
+                index = 0;
+                type();
+            }, 2000); // 2초 후에 다시 시작
+        }
+    }
+    type();
+}
+
+// 사용 예시
+typeTextOnPlane(
+    "포괄적·유토피아적·공동체적·헤테로토피아적·유기적·포용적·저항적·비언어적·환대적·비이성적 포괄적·유토피아적·공동체적·헤테로토피아적·유기적·포용적·저항적·비언어적·환대적·비이성적",
+    { x: 150, y: -2, z: 14 },
+    30000, // 전체 텍스트가 10초 동안 타이핑되도록 설정
+    { x: 0, y: 0, z:  Math.PI /-5} // 회전 각도 설정 (예: y축을 기준으로 45도 회전)
+);
+
+typeTextOnPlane(
+    "포괄적·유토피아적·공동체적·헤테로토피아적·유기적·포용적·저항적·비언어적·환대적·비이성적 포괄적·유토피아적·공동체적·헤테로토피아적·유기적·포용적·저항적·비언어적·환대적·비이성적",
+    { x: 1100, y: -2, z: 14 },
+    30000, // 전체 텍스트가 10초 동안 타이핑되도록 설정
+    { x: 0, y:0, z:  Math.PI / 5 } // 회전 각도 설정 (예: 회전 없음)
+);
+// 작성되는 텍스트 종료
+
+
+
+// 잡고 움직이는 네모 시작2
+function createDraggableSquareWithText2(text, position) {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width =  1024;
+    canvas.height = 256;
+    context.fillStyle = 'rgba(0, 0, 0, 1.0)';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = 'white';
+    context.font = 'bold 60px serif';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText(text, canvas.width / 2, canvas.height / 2);
+
+    const texture = new THREE.CanvasTexture(canvas);
+    const material = new THREE.MeshBasicMaterial({ map: texture });
+
+    const squareGeometry = new THREE.SphereGeometry(10, 12, 30);
+    const square = new THREE.Mesh(squareGeometry, material);
+    square.position.set(position.x, position.y, position.z);
+    // y축을 기준으로 왼쪽으로 회전 추가
+    scene.add(square);
+
+    // 드래그 기능 추가
+    square.userData = { isDragging: false };
+    square.onMouseDown = function(event) {
+        square.userData.isDragging = true;
+    };
+    square.onMouseMove = function(event) {
+        if (square.userData.isDragging) {
+            const mouse = new THREE.Vector2(
+                (event.clientX / window.innerWidth) * 2 - 1,
+                -(event.clientY / window.innerHeight) * 2 + 1
+            );
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObject(square);
+            if (intersects.length > 0) {
+                const intersectPoint = intersects[0].point;
+                square.position.x = intersectPoint.x; // x축 위치만 업데이트
+                square.position.y = intersectPoint.y; // y축 위치만 업데이트
+                // z축 위치는 업데이트하지 않음
+            }
+        }
+    };
+    square.onMouseUp = function() {
+        square.userData.isDragging = false;
+    };
+
+    window.addEventListener('mousedown', square.onMouseDown);
+    window.addEventListener('mousemove', square.onMouseMove);
+    window.addEventListener('mouseup', square.onMouseUp);
+
+    return square;
+}
+
+// 사용 예시
+const square1 = createDraggableSquareWithText2("연대 연대 연대 연대 연대 연대 연대 연대", { x: 940, y: 10, z: 0 });
+const square2 = createDraggableSquareWithText2("창조 창조 창조 창조 창조 창조 창조 창조", { x: 960, y: -14, z: 0 });
+const square3 = createDraggableSquareWithText2("평등 평등 평등 평등 평등 평등 평등 평등", { x: 980, y: 8, z: 0 });
+//  추가로 음 ㅡㅁ... 
+const square4 = createDraggableSquareWithText2("사고 사고 사고 사고 사고 사고 사고 사고", { x: 630, y: 3, z: 0 });
+const square5 = createDraggableSquareWithText2("존재 존재 존재 존재 존재 존재 존재 존재 존재", { x: 600, y: 8, z: 0 });
+const square6 = createDraggableSquareWithText2("언어 언어 언어 언어 언어 언어 언어 언어 언어", { x: 615, y: -4, z: 0 });
+// 
+const square7 = createDraggableSquareWithText2(".....................", { x:80, y: 0, z: 0 });
+const square8 = createDraggableSquareWithText2(".....................", { x: 100, y: 8, z: 0 });
+const square9 = createDraggableSquareWithText2(".....................", { x: 120, y: -4, z: 0 });
+
+
+
+
+
+// 잡고 움직이는 네모 종료2
+
+// 흰네모 글 클릭 요소 시작
+function createClickableText(initialText, newText, position) {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = 1024;
+    canvas.height = 256;
+    context.fillStyle = 'rgba(0, 0, 0, 0.0)';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = 'white';
+    context.font = 'bold 18px serif';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.filter = 'none'; // 블러 효과 제거
+
+    // 초기 텍스트 그리기
+    context.fillText(initialText, canvas.width / 2, canvas.height / 2);
+
+    const texture = new THREE.CanvasTexture(canvas);
+    const material = new THREE.MeshBasicMaterial({
+        map: texture,
+        transparent: true,
+        side: THREE.DoubleSide,
+        opacity: 0.95
+    });
+
+    const planeMesh = new THREE.Mesh(new THREE.PlaneGeometry(10, 5), material);
+    planeMesh.position.set(position.x, position.y, position.z);
+    scene.add(planeMesh);
+
+    planeMesh.userData = { initialText, newText };
+
+    // planeMesh.rotation.set(0, Math.PI / 3, 0); // 회전 제거
+
+    return planeMesh;
+}
+// 사용 예시
+// const clickableBoxTextPlane = createClickableText("첫 번째 텍스트", "클릭 후 텍스트", { x: 430, y: 0, z: 0 });
+
+// 클릭 이벤트 핸들러 추가
+function handleClick(event) {
+    const mouse = new THREE.Vector2();
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    const raycaster = new THREE.Raycaster();
+    raycaster.setFromCamera(mouse, camera);
+
+    // const intersects = raycaster.intersectObject(clickableBoxTextPlane);
+
+    // if (intersects.length > 0) {
+    //     const context = intersects[0].object.material.map.image.getContext('2d');
+    //     context.clearRect(0, 0, 1024, 256);
+    //     context.fillText(intersects[0].object.userData.newText, 512, 128);
+    //     intersects[0].object.material.map.needsUpdate = true;
+    // }
+}
+
+window.addEventListener('click', handleClick);
+
+
+// function handleClickOrTouch(event) {
+//     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+//     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+//     raycaster.setFromCamera(mouse, camera);
+//     const intersects = raycaster.intersectObjects([clickableTextPlane, clickableTextPlane2, clickableTextPlane3]);
+
+//     if (intersects.length > 0) {
+//         intersects[0].object.onClick();
+//     }
+// }
+
+// window.addEventListener('click', handleClickOrTouch);
+// window.addEventListener('touchstart', handleClickOrTouch);
+
+// 클릭하면 내용이 변하는 텍스트 종료
+
+//세로쓰기 시작
+
+function createVerticalTextPlane(text, position, fontSize = 40) {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = 256;
+    canvas.height = 1024;
+    context.fillStyle = 'rgba(0, 0, 0, 0.0)';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = 'white';
+    context.font = `bold ${fontSize}px serif`;
+    context.textAlign = 'start';
+    context.textBaseline = 'middle';
+
+    // 세로로 텍스트 그리기
+    const lines = text.split('\n'); // 줄넘김을 위한 분리
+    const lineHeight = fontSize * 1.2;
+    lines.forEach((line, lineIndex) => {
+        const chars = line.split('');
+        chars.forEach((char, charIndex) => {
+            context.fillText(char, canvas.width / 2 - (lineIndex * fontSize), 50 + (charIndex * lineHeight));
+        });
+    });
+
+    const texture = new THREE.CanvasTexture(canvas);
+    const material = new THREE.MeshBasicMaterial({
+        map: texture,
+        transparent: true,
+        side: THREE.DoubleSide,
+        opacity: 0.95
+    });
+
+    const planeMesh = new THREE.Mesh(new THREE.PlaneGeometry(10, 40), material);
+    planeMesh.position.set(position.x, position.y, position.z+10);
+
+    scene.add(planeMesh);
+    return planeMesh;
+}
+
+
+
+// 사용 예시
+createVerticalTextPlane("말이 함의하는 의미는 정당성을 인정받으며,  ", { x: 950, y: 4, z: 0 });
+createVerticalTextPlane("인정받으며, 권위에 의해 승인된 결과로 여겨지므로,", { x: 954, y: 4, z: 0 });
+createVerticalTextPlane("여겨지므로, 언어는 집단에 의해 동의 받고,", { x: 958, y: 4, z: 0 });
+createVerticalTextPlane(" 받고,", { x: 962, y: 4, z: 0 });
+
+
+
+//세로쓰기 종료
+
+//커서
+
+
+// // 마우스 위치를 저장할 벡터 생성
+// const mouse2 = new THREE.Vector2();
+
+// // 구체 생성
+// const sphereGeometry2 = new THREE.SphereGeometry(1, 32, 32);
+// const sphereMaterial2 = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+// const sphere2 = new THREE.Mesh(sphereGeometry2, sphereMaterial2);
+// scene.add(sphere2);
+
+// // 마우스 이동 이벤트 리스너 추가
+// document.addEventListener('mousemove', (event) => {
+//     // 마우스 위치를 -1에서 1 사이의 값으로 변환
+//     mouse2.x = (event.clientX / window.innerWidth) * 2 - 1;
+//     mouse2.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+//     // 마우스 위치에 따라 구체 이동
+//     const vector2 = new THREE.Vector3(mouse2.x, mouse2.y, 0.5);
+//     vector2.unproject(camera);
+//     const dir2 = vector2.sub(camera.position).normalize();
+//     const distance2 = -camera.position.z / dir2.z;
+//     const pos2 = camera.position.clone().add(dir2.multiplyScalar(distance2));
+//     sphere2.position.copy(pos2);
+// });
+
+
+
+
+
+    //
+
+
+
+
+
+
+
+
+
+
+    
+
+
+        // 애니메이션 루프에 물리 업데이트 추가
+        function animate() {
+            requestAnimationFrame(animate);
+            updateScrollWithCamera(); // 카메라 위치에 따른 스크롤 업데이트
+            // rotateWords();
+            animateClock(); // 시계 애니메이션 호출
+            // tetrahedronMesh.rotation.y += 0.01;
+
+    square1.rotation.y += 0.005; // y축을 기준으로 회전
+    square1.position.y += (Math.random() - 0.01) * Math.sin(square1.rotation.y) * 0.03;
+    square1.position.x += (Math.random() - 0.1)* Math.sin(square1.rotation.y) * 0.3;
+
+    square2.rotation.y += 0.005;
+    square2.position.y += (Math.random() - 0.01) * Math.sin(square2.rotation.y) * -0.03;
+    square2.position.x += (Math.random() - 0.1)* Math.sin(square2.rotation.y) * -0.3;    
+    square3.rotation.y += 0.005;
+    square3.position.y += (Math.random() - 0.01) * Math.sin(square3.rotation.y) * 0.03;
+    square3.position.x += (Math.random() - 0.1)* Math.sin(square3.rotation.y) * 0.3;
+
+    square4.rotation.y += 0.005;
+    square4.rotation.x += 0.005;
+    square4.position.y += (Math.random() - 0.01) * Math.cos(square4.rotation.y) * 0.03;
+    square4.position.x += (Math.random() - 0.1)* Math.cos(square4.rotation.y) * 0.3;
+    square4.position.z += (Math.random() - 0.1)* Math.cos(square4.rotation.y) * 0.3;
+
+    square5.rotation.y += 0.005;
+    square5.rotation.x += 0.005;
+    square5.position.y += (Math.random() - 0.01) * Math.cos(square5.rotation.y) * 0.03;
+    square5.position.x += (Math.random() - 0.1)* Math.cos(square5.rotation.y) * 0.3;
+    square5.position.z += (Math.random() - 0.1)* Math.cos(square6.rotation.y) * 0.3;
+
+
+    square6.rotation.y += 0.005;
+    square6.rotation.x += 0.005;
+    square6.position.y += (Math.random() - 0.01) * Math.cos(square6.rotation.y) * 0.03;
+    square6.position.x += (Math.random() - 0.1)* Math.cos(square6.rotation.y) * 0.3;
+    square6.position.z += (Math.random() - 0.1)* Math.cos(square6.rotation.y) * 0.3;
+
+    square7.rotation.y += 0.005;
+    square7.rotation.x += 0.005;
+    square7.position.y += (Math.random() - 0.01) * Math.cos(square7.rotation.y) * 0.03;
+    square7.position.x += (Math.random() - 0.1)* Math.cos(square7.rotation.y) * 0.03;
+    square7.position.z += (Math.random() - 0.1)* Math.cos(square7.rotation.y) * 0.3;
+
+    square8.rotation.y += 0.005;
+    square8.rotation.x += 0.005;
+    square8.position.y += (Math.random() - 0.01) * Math.cos(square8.rotation.y) * 0.03;
+    square8.position.x += (Math.random() - 0.1)* Math.cos(square8.rotation.y) * 0.03;
+    square8.position.z += (Math.random() - 0.1)* Math.cos(square8.rotation.y) * 0.3;
+
+    square9.rotation.y += 0.005;
+    square9.rotation.x += 0.005;
+    square9.position.y += (Math.random() - 0.01) * Math.cos(square9.rotation.y) * 0.01;
+    square9.position.x += (Math.random() - 0.1)* Math.cos(square9.rotation.y) * 0.01;
+    square9.position.z += (Math.random() - 0.1)* Math.cos(square9.rotation.y) * 0.1;
+
+            spheresResult1.forEach(sphere => {
+                sphere.rotation.y += 0.005;
+                
+                // 구체의 위치를 랜덤하게 약간씩 이동
+                sphere.position.y += (Math.random() - 0.01) * Math.sin(sphere.rotation.y) * 0.03;
+                sphere.position.scale += (Math.random() - 0.5) * Math.sin(sphere.rotation.y) * 0.1;
+            });
+
+            spheresResult2.forEach(sphere => {
+                sphere.rotation.y +=0.005;
+                
+                // 구체의 위치를 랜덤하게 약간씩 이동
+                sphere.position.y += (Math.random() - 0.01) * Math.sin(sphere.rotation.y) * 0.03;
+                sphere.position.scale += (Math.random() - 0.5) * Math.sin(sphere.rotation.y) * 0.1;
+            });
+
+            spheresResult3.forEach(sphere => {
+                sphere.rotation.y += 0.005;
+                
+                // 구체의 위치를 랜덤하게 약간씩 이동
+                sphere.position.y += (Math.random() - 0.01) * Math.sin(sphere.rotation.y) * 0.03;
+                sphere.position.scale += (Math.random() - 0.5) * Math.sin(sphere.rotation.y) * 0.1;
+            });
+
+            spheresResult4.forEach(sphere => {
+                sphere.rotation.y += 0.005;
+
+                
+                // 구체의 위치를 랜덤하게 약간씩 이동
+                sphere.position.y += (Math.random() - 0.01) * Math.sin(sphere.rotation.y) * 0.03;
+                sphere.position.scale += (Math.random() - 0.5) * Math.sin(sphere.rotation.y) * 0.1;
+            });
+
+
+            if(1300 < camera.position.x) {
+                camera.position.x = -99;
+                    
+            }
+
+            if(-100> camera.position.x) {
+                camera.position.x = 1170;
+                    
+            }
+
+            if(100 > camera.position.x ) {
+                // document.querySelector('.box').style.display = 'none';
+                camera.position.y = 0;
+            }
+
+            if (camera.position.x > 50) {
+                // overHtml.style.display = 'block';
+                overHtml.style.transition = 'opacity 1s ease-in-out';
+                overHtml.style.opacity = 1;
+            }else if(camera.position.x < 50){
+                // overHtml.style.display = 'none';
+                overHtml.style.transition = 'opacity 0s ease-in-out';
+        overHtml.style.opacity = 0;
+    }
+
+
+      
+
+            // if(70 < camera.position.x) {
+            //     document.querySelector('.box').style.display = 'block';
+            // }
+            // if(150 < camera.position.x) {
+            //     document.querySelector('.box').style.display = 'none';
+            // }
+
+
+            // if(camera.position.x < -150) {
+            //     camera.position.x = 550;
+
+
+                    
+            // }
+
+            renderer.render(scene, camera);
+          
+        }
+        animate();
+
+        //책 박스 종료!!!!
+    </script>
+    <div class="custom-cursor" id="customCursor"></div>
+    <script>
+        const customCursor = document.getElementById('customCursor');
+
+        document.addEventListener('mousemove', (event) => {
+            customCursor.style.left = `${event.clientX}px`;
+            customCursor.style.top = `${event.clientY}px`;
+        });
+    </script>
+</body>
+</html>
